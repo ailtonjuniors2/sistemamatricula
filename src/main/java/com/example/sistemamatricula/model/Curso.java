@@ -1,5 +1,10 @@
 package com.example.sistemamatricula.entity;
-import java.time.LocalDate;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "cursos")
 
 @Getter
 @Setter
@@ -12,9 +17,12 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "Nome_Curso", nullable = false)
     private String nomeCurso;
-    private String codigo;
-    private String horario;
-    private int vagas;
-    private int vagasOcupadas;
+
+    @Column(name = "Carga_horaria", nullable = false)
+    private int cargaHoraria;
+
+    private String descricao;
+    private String professor;
 }
