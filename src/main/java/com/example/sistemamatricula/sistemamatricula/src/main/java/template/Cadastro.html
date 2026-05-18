@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Matrícula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Liter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+
+</head>
+<body>
+<button class="btn-voltar" onclick="window.history.back()">←</button>
+<div class="container">
+
+<div class="ident">
+<img src="https://i.pinimg.com/736x/1c/23/35/1c2335ec0a189439cddb0c8751c9144a.jpg" class="icon" alt="Foto">
+</div>
+
+
+
+<div class="page-header">
+<h1>Cadastro de Turma</h1>
+</div>
+
+
+<form class="form-container">
+
+
+<div class="form-group">
+<label for="nomeCurso">Nome do Curso</label>
+<input 
+    type="text" 
+    id="nomeCurso" 
+    name="nomeCurso" 
+    placeholder="Ex: Matemática Avançada" 
+    required
+>
+</div>
+
+<div class="form-group">
+<label for="professor">Professor</label>
+<input 
+    type="text" 
+    id="professor" 
+    name="professor" 
+    placeholder="Ex: Prof. Dr. João Silva" 
+    required
+>
+</div>
+
+
+<div class="form-group">
+<label for="turno">Turno</label>
+<select id="turno" name="turno" required>
+    <option value="" disabled selected>Selecione o turno</option>
+    <option value="manha">Manhã</option>
+    <option value="tarde">Tarde</option>
+    <option value="noite">Noite</option>
+    <option value="integral">Integral</option>
+</select>
+</div>
+
+<div class="btn-container">
+<button type="button" class="btn btn-cac" onclick="window.history.back()">Cancelar</button>
+<button type="submit" class="btn btn-cad">Cadastrar Turma</button>
+</div>
+
+</form>
+
+</div>
+</body>
+</html>
