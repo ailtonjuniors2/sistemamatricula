@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Mensagens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Liter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <button class="btn-voltar" onclick="window.history.back()">←</button>
+    
+    <div class="container-mensagem">
+        <div class="header-page">
+            <h2>Envio de Mensagens</h2>
+        </div>
+
+        <form class="form-mensagem" action="#" method="post">
+            <div class="campo-form">
+                <label for="destinatario">Para quem enviar</label>
+                <select id="destinatario" name="destinatario" required onchange="mostrarDestinatario()">
+                    <option value="" disabled selected>Selecione o destinatário...</option>
+                    <option value="todos">Todos os alunos</option>
+                    <option value="professores">Todos os professores</option>
+                    <option value="responsaveis">Todos os responsáveis</option>
+                    <option value="turma_a">Turma A</option>
+                    <option value="turma_b">Turma B</option>
+                    <option value="individual">Selecionar individualmente</option>
+                </select>
+                <div id="info-dest" class="info-destinatario" style="display: none;"></div>
+            </div>
+
+            <div class="campo-form">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+    </div>
+</body>
+</html>
