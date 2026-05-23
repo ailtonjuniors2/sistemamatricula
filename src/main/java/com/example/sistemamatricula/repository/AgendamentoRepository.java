@@ -1,4 +1,17 @@
 package com.example.sistemamatricula.repository;
 
-public interface AgendamentoRepository {
+import com.example.sistemamatricula.model.Agendamento;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
+
+@Repository
+public interface AgendamentoRepository
+        extends JpaRepository<Agendamento, Long> {
+
+    boolean existsByAtendenteIdAndDataHora(
+            Long atendenteId,
+            LocalDateTime dataHora
+    );
 }

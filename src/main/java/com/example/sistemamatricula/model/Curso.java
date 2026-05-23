@@ -1,4 +1,4 @@
-package com.example.sistemamatricula.entity;
+package com.example.sistemamatricula.model;
 
 import jakarta.persistence.*;
 import lombok.*;

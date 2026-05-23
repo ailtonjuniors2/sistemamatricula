@@ -1,4 +1,14 @@
 package com.example.sistemamatricula.repository;
 
-public interface AlunoRepository {
+import com.example.sistemamatricula.model.Aluno;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AlunoRepository
+        extends JpaRepository<Aluno, Long> {
+
+    boolean existsByCpf(String cpf);
+
+    boolean existsByEmail(String email);
 }

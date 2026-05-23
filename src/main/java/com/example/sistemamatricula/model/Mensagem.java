@@ -1,4 +1,4 @@
-package com.example.sistemamatricula.entity;
+package com.example.sistemamatricula.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,7 +19,7 @@ public class Mensagem {
 	@Column(nullable = false)
 	private String mensagem;
 
-	private LocalDateTime data
+	private LocalDateTime data;
 
 	@ManyToOne
 	@JoinColumn(name = "id_atendente")

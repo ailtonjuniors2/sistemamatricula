@@ -1,4 +1,4 @@
-package com.example.sistemamatricula.entity;
+package com.example.sistemamatricula.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class turma {
+public class Turma {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
