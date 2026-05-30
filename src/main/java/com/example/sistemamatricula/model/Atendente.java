@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Atendente {
+public class Atendente extends Usuario{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

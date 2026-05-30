@@ -2,6 +2,8 @@ package com.example.sistemamatricula.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.validator.constraints.br.CPF;
+
 import java.time.LocalDate;
 
 @Entity
@@ -12,7 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Aluno {
+public class Aluno extends Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +24,7 @@ public class Aluno {
     private String nomeCompleto;
 
     @Column(unique = true, nullable = false)
+    @CPF
     private String cpf;
 
     @Column(nullable = false)
