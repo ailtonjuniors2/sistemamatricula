@@ -1,6 +1,7 @@
 package com.example.sistemamatricula.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Entity
@@ -11,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Atendente extends Usuario{
+public class Atendente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,4 +29,7 @@ public class Atendente extends Usuario{
     
     @Column(nullable = false)
     private String telefone;
+
+    @Size(min = 9, max = 9, message = "A senha deve possuir entre 6 e 9 caracteres")
+    private String senha;
 }

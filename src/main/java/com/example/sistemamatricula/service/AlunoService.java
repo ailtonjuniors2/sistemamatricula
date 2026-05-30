@@ -36,6 +36,7 @@ public class AlunoService {
         aluno.setEmail(dados.getEmail());
         aluno.setTelefone(dados.getTelefone());
         aluno.setNascimento(dados.getNascimento());
+        aluno.setSenha(dados.getSenha());
 
         return repository.save(aluno);
     }

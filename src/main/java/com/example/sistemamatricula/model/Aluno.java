@@ -1,6 +1,7 @@
 package com.example.sistemamatricula.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Aluno extends Usuario {
+public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +36,7 @@ public class Aluno extends Usuario {
 
     @Column(nullable = false)
     private LocalDate nascimento;
+
+    @Size(min = 9, max = 9, message = "A senha deve possuir entre 6 e 9 caracteres")
+    private String senha;
 }

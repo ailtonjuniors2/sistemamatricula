@@ -35,6 +35,7 @@ public class AtendenteService {
         atendente.setCpf(dados.getCpf());
         atendente.setEmail(dados.getEmail());
         atendente.setTelefone(dados.getTelefone());
+        atendente.setSenha(dados.getSenha());
 
         return repository.save(atendente);
     }
