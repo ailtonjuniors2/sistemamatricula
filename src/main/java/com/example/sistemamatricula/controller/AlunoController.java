@@ -29,7 +29,7 @@ public class AlunoController {
 
     @PostMapping
     public Aluno salvar(
-            @RequestBody Aluno aluno) {
+           @Valid @RequestBody Aluno aluno) {
 
         return service.salvar(aluno);
     }
