@@ -2,6 +2,7 @@ package com.example.sistemamatricula.controller;
 
 import com.example.sistemamatricula.model.Aluno;
 import com.example.sistemamatricula.service.AlunoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
