@@ -587,3 +587,190 @@ font-size: 14px;
 color: var(--03-);
 margin-top: 8px;
 }
+
+/*Tela de Cadastro de Atendente*/
+
+.titE{
+display:flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-top:40px;
+}
+
+.nome{
+  font-size: 40px;
+}
+
+.entrar{
+display:flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+.container-entrar {
+align-items: center;
+background-color: var(--03-);
+padding: 30px;
+border: 2px solid var(--02-);
+border-radius: 10px;
+max-width: 700px;
+margin-top: 150px;
+width: 100%;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.labelE {
+margin-bottom: 15px;
+display: block;
+}
+
+.labelE label {
+display: block;
+color: var(--01-);
+margin-bottom: 5px;
+font-size: 20px;
+font-family: var(--04-);
+}
+
+.formE {
+width: 100%;
+padding: 12px 0px 12px 5px;
+border: 2px solid var(--02-);
+border-radius: 5px;
+background-color: var(--03-);
+font-size: 14px;
+transition: border-color 0.3s;
+}
+
+.formE:focus {
+outline: none;
+border-color: var(--01-);
+}
+
+.formE::placeholder {
+color: var(--02-);
+font-family: var(--05-);
+}
+
+.btn-cadastrar {
+width: 100%;
+padding: 15px;
+background-color: var(--02-);
+color: var(--03-);
+border: none;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+margin-top: 20px;
+transition: background-color 0.3s;
+}
+
+.btn-cadastrar:hover {
+background-color: var(--01-);
+}
+
+.link-login {
+text-align: center;
+margin-top: 15px;
+color: var(--01-);
+font-size: 14px;
+}
+
+.link-login a {
+color: var(--02-);
+text-decoration: none;
+font-weight: bold;
+}
+
+.link-login a:hover {
+text-decoration: underline;
+}
+
+/*Login do Sistema*/
+
+.titleL{
+display:flex;
+justify-content: center;
+}
+
+.titL{
+font-family: var(--04-);
+color:var(--01-);
+}
+
+.containerL{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group input {
+width: 100%;
+padding: 12px 15px;
+border: 2px solid var(--02-);
+border-radius: 4px;
+font-size: 16px;
+background-color: #fff;
+}
+
+.form-group input:focus {
+outline: none;
+border-color: var(--01-);
+}
+
+.input-label {
+display: block;
+width: 60px;
+height: 6px;
+font-family: var(--04-);
+color:var(--01-);
+margin-bottom: 28px;
+}
+
+.btn-login {
+width:120px;
+padding:12px;
+background-color: var(--02-);
+border: none;
+border-radius: 4px;
+color: var(--01-);
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+margin: 30px auto 0;
+display: block;
+}
+
+.btn-login:hover {
+background-color: var(--02-);
+}
+
+.btn-login:active {
+border-bottom: 2px solid var(--02-);
+transform: translateY(2px);
+}
+
+.linkL {
+text-align: center;
+margin-top: 5px;
+font-size: 15px;
+font-family: var(--05-);
+}
+
+.linkL a {
+color: var(--01-);
+text-decoration: none;
+font-weight: 600;
+}
+
+.linkL a:hover {
+color: var(--02-);
+text-decoration: underline;
+}
