@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro no Sistema</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Liter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.container-entrar').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const formData = {
+            nomeCompleto: document.getElementById('nomeE').value,
+            cpf: document.getElementById('cpfE').value,
+            email: document.getElementById('emailE').value,
+            telefone: document.getElementById('telE').value,
+            senha: document.getElementById('senhaE').value
+        };
+        if (formData.senha.length !== 9) {
+            alert('A senha deve ter somente 9 caracteres.');
+            return;
+        }
+
+        try {
+            const response = await fetch('http://localhost:8080/atendentes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert('Cadastro de Atendente realizado com sucesso!');
+                
+                localStorage.setItem('userEmail', formData.email);
+                
+                window.location.href = 'Login.html';
+            } else {
+                const errorResponse = await response.text();
+                alert('Erro ao cadastrar Atendente: ' + errorResponse);
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            alert('Erro ao conectar com o servidor.');
+        }
+    });
+});
+</script>
+
+<body>
+        <div class="titE">
+        <h1 class="nome">Cadastro</h1>
+        </div>
+
+    <div class="entrar">
+    <form class="container-entrar" action="#" method="POST">
+
+        <div class="labelE">
+            <label for="nomeE">Nome</label>
+            <input type="text" 
+                class="formE"
+                id="nomeE" 
+                name="nome"
+                maxlength="250" 
+                placeholder="Nome Completo" 
+                required>
+        </div>
+
+        <div class="labelE">
+            <label for="cpfE">CPF</label>
+            <input type="text"
+                class="formE"
+                id="cpfE" 
+                name="cpf"
+                minlength="11" 
+                maxlength="14" 
+                placeholder="000.000.000-00"
+                required>
+        </div>
+
+        <div class="labelE">
+            <label for="emailE">Email</label>
+            <input type="email" 
+                class="formE"
+                id="emailE"
+                name="email"
+                placeholder="seu@email.com"
+                required>
+        </div>
+
+        <div class="labelE">
+            <label for="telE">Celular</label>
+            <input type="tel" 
+                class="formE"
+                id="telE" 
+                name="tel" 
+                placeholder="(12) 34567-8910" 
+                maxlength="15" 
+                required>
+        </div>
+
+        <div class="labelE">
+            <label for="senhaE">Senha</label>
+            <input type="password" 
+                maxlength="9"
+                class="formE"
+                id="senhaE"
+                name="senha"
+                placeholder="Até 9 dígitos"
+                required>
+        </div>
+
+        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+
+        <p class="link-login">Já cadastrado? <a href="Login.html">Ir para o Login</a></p>
+    </form>
+    </div>
+</body>
+
+</html>
