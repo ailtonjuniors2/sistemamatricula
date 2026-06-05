@@ -47,7 +47,6 @@ font-size: 16px;
 color: var(--01-);
 }
 
-      
 .opc {
 display: flex;
 justify-content: space-around;
@@ -134,13 +133,6 @@ text-align: justify;
     justify-content: space-around;
 }
 
-/*foto upload*/
-.upload{
-    align-self: center;
-    font-family: var(--05-);
-    text-align:justify;
-}
-
 input[type="file"] {
   display: none;
 }
@@ -196,6 +188,7 @@ input[type="file"] {
 .btn-mat{
     display: flex;
     justify-content: center;
+    color:var(--03-);
 }
 
 .btn-sbt{
@@ -222,9 +215,77 @@ input[type="file"] {
   letter-spacing: 0.5px;
 }
 
+.form-gerenciar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:var(--05-);
+    margin-top:100px;
+    width:100%;
+}
+.form-gerenciar h3 {
+    font-family: var(--04-);
+    color: var(--01-);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.btn-gerenciar {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-edit, .btn-delete, .btn-cancelar {
+    width: 160px;
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    font-family: var(--04-);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-edit { background-color: var(--02-); color: var(--01-); }
+.btn-edit:hover { background-color: var(--01-); color: var(--03-); }
+
+.btn-delete { background-color: var(--01-); color: var(--03-); }
+
+.btn-cancelar { background-color: var(--01-); color: var(--03-); display: none; }
+.btn-cancelar:hover { background-color: var(--03-); }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal.ativo { display: flex; }
+.modal-box {
+    background: var(--02-);
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+    font-family: var(--05-);
+    color: var(--01-);
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-box h4 { font-family: var(--04-); margin-bottom: 15px; }
+.modal-box p { margin-bottom: 25px; line-height: 1.5; }
+
+
 /*Cadastro na turma*/
 
-.container {
+.form-container {
 max-width: 800px;
 margin: 0 auto;
 padding: 30px 40px;
@@ -472,120 +533,192 @@ color: var(--01-);
 }
 
 /*Envio de Mensagens*/
-
-.container-mensagem {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 20px;
-max-width: 800px;
+.container {
+max-width: 1000px;
 margin: 0 auto;
+padding: 30px 40px;
 }
 
-.form-mensagem {
-width: 100%;
-background-color: var(--02-);
-padding: 40px;
-border-radius: 24px;
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+.ident {
 display: flex;
-flex-direction: column;
-gap: 24px;
+align-items: center;
+gap: 12px;
+justify-content: flex-end;
+margin-bottom: 20px;
+}
+.icon {
+height: 50px;
+width: 50px;
+border-radius: 50%;
+object-fit: cover;
 }
 
-.campo-form {
+/* ===== NAVEGAÇÃO ===== */
+.opc {
 display: flex;
-flex-direction: column;
-gap: 8px;
+justify-content: space-around;
+list-style: none;
+padding: 15px 0;
+border-bottom: 1px solid #FFFFF0;
+margin-bottom: 40px;
 }
-
-.campo-form label {
-font-family: var(--05-);
-font-size: 13px;
-font-weight: 600;
-color: var(--03-);
-text-transform: uppercase;
-letter-spacing: 0.5px;
-}
-
-.campo-form select,
-.campo-form textarea {
-width: 100%;
-padding: 14px 18px;
-font-size: 15px;
-font-family: var(--05-);
-border: 1.5px solid var(--03-);
-border-radius: 12px;
-background-color: #fff;
+.opc a {
+text-decoration: none;
 color: var(--01-);
-box-sizing: border-box;
-transition: all 0.3s ease;
-outline: none;
-}
-
-.campo-form select:focus,
-.campo-form textarea:focus {
-border-color: var(--01-);
-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-.campo-form textarea {
-min-height: 250px;
-resize: vertical;
-font-family: var(--05-);
-}
-
-.btn-enviar {
-background-color: var(--01-);
-color: var(--03-);
-border: none;
-padding: 16px 32px;
+font-family: 'BBH Bogle', sans-serif;
 font-size: 16px;
-font-family: var(--04-);
-font-weight: bold;
-border-radius: 25px;
-cursor: pointer;
+padding: 8px 20px;
+border-radius: 8px;
 transition: all 0.3s ease;
-align-self: center;
-margin-top: 10px;
-width: 100%;
-max-width: 300px;
+}
+.opc a:hover {
+color: var(--02-);
+font-size: 18px;
 }
 
-.btn-enviar:hover {
-transform: translateY(-2px);
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.header-page {
+.page-header {
 text-align: center;
+margin-bottom: 40px;
+}
+.page-header h1 {
+font-family: 'BBH Bogle', sans-serif;
+font-size: 32px;
+color: var(--01-);
+margin-bottom: 10px;
+}
+.page-header p {
+color: var(--01-);
+font-size: 16px;
+}
+
+.search-box {
 margin-bottom: 30px;
 }
-
-.header-page h2 {
-font-family: var(--04-);
-color: var(--01-);
-font-size: 28px;
+.search-box input {
+width: 100%;
+padding: 16px 24px;
+font-size: 16px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+background: #fff;
+outline: none;
+transition: all 0.3s ease;
+}
+.search-box input:focus {
+border-color: var(--02-);
+box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
-.btn-voltar {
-position: absolute;
-left: 20px;
-top: 20px;
-background: none;
-border: none;
+.faq-container {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+.faq-card {
+background: var(--03-);
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.faq-pergunta {
+padding: 20px 24px;
 cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(--02-);
+border: none;
+width: 100%;
+text-align: left;
+font-family: 'BBH Bogle', sans-serif;
+font-size: 16px;
+font-weight: 600;
+color: var(--01-);
+transition: all 0.3s ease;
+}
+
+.faq-icon {
 font-size: 24px;
 color: var(--01-);
+transition: transform 0.3s ease;
 }
 
-.info-destinatario {
-background-color: rgba(0, 0, 0, 0.05);
-padding: 12px 16px;
+.faq-card.active .faq-icon {
+transform: rotate(45deg);
+}
+
+.faq-resposta {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease, padding 0.3s ease;
+background: var(--03-);
+}
+
+.faq-card.active .faq-resposta {
+max-height: 500px;
+padding: 20px 24px;
+}
+
+.faq-resposta p {
+color: var(--01-);
+line-height: 1.8;
+margin-bottom: 15px;
+}
+
+.faq-resposta ul {
+margin-left: 20px;
+color: var(--01-);
+}
+
+.faq-resposta li {
+margin-bottom: 8px;
+line-height: 1.6;
+}
+
+.tag {
+display: inline-block;
+padding: 4px 12px;
+background: #FFFFF0;
+color: var(--01-);
+border-radius: 15px;
+font-size: 12px;
+font-weight: 600;
+margin-bottom: 12px;
+}
+
+.btn-copiar {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 16px;
+background: var(--01-);
+color: #FFFFF0;
+border: none;
 border-radius: 8px;
+cursor: pointer;
 font-size: 14px;
-color: var(--03-);
-margin-top: 8px;
+margin-top: 10px;
+transition: all 0.3s ease;
+}
+
+.btn-copiar:hover {
+background: var(--02-);
+transform: translateY(-2px);
+}
+
+/*Responsivo*/
+@media (max-width: 768px) {
+.container { padding: 20px; }
+.ident { justify-content: center; }
+.opc { flex-direction: column; align-items: center; gap: 10px; }
+.categorias { justify-content: center; }
 }
 
 /*Tela de Cadastro de Atendente*/
