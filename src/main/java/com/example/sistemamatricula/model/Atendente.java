@@ -32,4 +32,13 @@ public class Atendente {
 
     @Size(min = 9, max = 9, message = "A senha deve possuir entre 6 e 9 caracteres")
     private String senha;
+
+    @OneToMany (mapped by = "atendente")
+    private list<Atendimento> Atendimentos
+
+    @OneToMany (mapped by = "atendente")
+    private list<Agendamento> Agendamentos
+
+    @OneToMany (mapped by = "atendente")
+    private list<Mensagem> Mensagens
 }
