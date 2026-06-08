@@ -25,4 +25,7 @@ public class Curso {
 
     private String descricao;
     private String professor;
+
+    @OneToMany (mapped by = "curso")
+    private list<Turma> Turmas
 }
