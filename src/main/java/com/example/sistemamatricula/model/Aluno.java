@@ -37,6 +37,15 @@ public class Aluno {
     @Column(nullable = false)
     private LocalDate nascimento;
 
-    @Size(min = 9, max = 9, message = "A senha deve possuir entre 6 e 9 caracteres")
+    @Size(min = 6, max = 9, message = "A senha deve possuir entre 6 e 9 caracteres")
     private String senha;
+
+    @OneToMany (mapped by = "aluno")
+    private list<Matricula> Matriculas
+
+    @OneToMany (mapped by = "aluno")
+    private list<Agendamento> Agendamentos
+
+    @OneToMany (mapped by = "aluno")
+    private list<Mensagem> Mensagens
 }
