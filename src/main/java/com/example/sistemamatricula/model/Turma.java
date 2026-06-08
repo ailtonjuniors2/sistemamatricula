@@ -21,4 +21,11 @@ public class Turma {
 	
 	@Column(nullable = false)
 	private String materia;
+
+	@ManyToOne
+    @JoinColumn(name = "id_curso")
+    private Curso curso;
+
+    @OneToMany(mappedBy = "turma")
+    private List<Matricula> matriculas;
 }
